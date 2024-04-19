@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Surveiziz - A Survey About Missing Tasks</title>
+<head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <body background="mind.jpg">
+<link rel="stylesheet" href="formie.css">
+    <form>
+        <div class="box">
+      <p>What curriculum are you part of?</p>
+    <input type="radio" name="spj" value="SPJ">
+    <label for="spj">SPJ</label><br>
+    <input type="radio" name="spj" value="SPFL">
+    <label for="spfl">SPFL</label><br>
+    <input type="radio" name="spj" value="Ste">
+    <label for="ste">STE</label>
+    
+    <p>What school events did you participate/compete in?</p>
+    <input type="checkbox" value="Division Athletic Meet" class="divmeet">
+    <label for="divmeet">Division Athletic Meet</label><br>
+    <input type="checkbox" value="ASMEPPS" class="divmeet">
+    <label for="asmepps">ASMEPPS</label><br>
+    <input type="checkbox" value="DSPC" class="divmeet">
+    <label for="dspc">DSPC</label><br>
+    <input type="checkbox" value="None" class="divmeet">
+    <label for="none">None</label><br>
+    <input type="checkbox" value="Others" class="divmeet">
+    <label for="others">Others</label><input type="text" placeholder="What other events?" id="divmeet">
+
+    <p>Did you enjoy the experience?</p>
+    <input type="radio" name="yes1" value="Yes">
+    <label for="yes1">Yes</label><br>
+    <input type="radio" name="yes1" value="No">
+    <label for="yes1">No</label><br>
+    
+    <p>Does your coach train you regularly before competitions?</p>
+    <input type="radio" name="yes0" value="Yes">
+    <label for="yes1">Yes</label><br>
+    <input type="radio" name="yes0" value="No">
+    <label for="yes1">No</label><br>
+
+    <p>Has these events caused your work to pile up?</p>
+    <input type="radio" name="yes2" value="Yes">
+    <label for="yes1">Yes, my work piled up</label><br>
+    <input type="radio" name="yes2" value="No">
+    <label for="yes1">No, I managed to get through it</label><br>
+
+    <p>Have you been consistent in passing your missing tasks?</p>
+    <input type="radio" name="yes3" value="Yes">
+    <label for="yes1">Yes</label><br>
+    <input type="radio" name="yes3" value="No">
+    <label for="yes1">No</label><br>
+
+    <p>Is the work stressing you out?</p>
+    <input type="radio" name="yes4" value="Yes">
+    <label for="yes1">Yes</label><br>
+    <input type="radio" name="yes4" value="No">
+    <label for="yes1">No</label><br>
+
+    <p>Did you receive any incentives or excemptions because of your participation</p>
+    <input type="radio" name="yes5" value="Yes">
+    <label for="yes1">Yes</label><br>
+    <input type="radio" name="yes5" value="No">
+    <label for="yes1">No</label><br>
+
+    <p>How many tasks did you miss?</p>
+    <input type="radio" name="onefive" value="1-5">
+    <label for="yes1">1-5</label><br>
+    <input type="radio" name="onefive" value="6-10">
+    <label for="yes1">6-10</label><br>
+    <input type="radio" name="onefive" value="None">
+    <label for="yes1">None</label><br>
+    <input type="radio" name="onefive" value="Dk">
+    <label for="yes1">Don't know/Prefer not to say</label><br>
+
+    <p>Did the events impact your learning?</p>
+    <input type="radio" name="yes6" value="Yes">
+    <label for="yes1">Yes</label><br>
+    <input type="radio" name="yes6" value="No">
+    <label for="yes1">No</label><br>
+
+    <p>Will you still consider joining in school events/competitions again?</p>
+    <input type="radio" name="yes7" value="Yes">
+    <label for="yes1">Yes</label><br>
+    <input type="radio" name="yes7" value="Yes">
+    <label for="yes1">No</label><br>
+    <button class="btn" type="submit" onclick="one()">Submit</button>
+
+        </div>
+    </form>
+    <script>
+
+        function one(){ 
+          alert("Thanks for answering our survey!")
+            event.preventDefault();
+
+ let optsdiv = document.querySelectorAll(".divmeet")
+ let xdivmeet="";
+
+ for (let i=0; i<optsdiv.length; i++) {
+  element = optsdiv[i]
+  console.log(element)
+   if(element.checked){
+      xdivmeet += (" , " +  element.value)
+   }
+ }
+console.log(xdivmeet)
+
+
+ var spj=document.querySelector('input[name="spj"]:checked').value;
+ var yes1=document.querySelector('input[name="yes1"]:checked').value;
+ var yes0=document.querySelector('input[name="yes0"]:checked').value;
+ var yes2=document.querySelector('input[name="yes2"]:checked').value;
+ var yes3=document.querySelector('input[name="yes3"]:checked').value;
+ var yes4=document.querySelector('input[name="yes4"]:checked').value;
+ var yes5=document.querySelector('input[name="yes5"]:checked').value;
+ var yes6=document.querySelector('input[name="yes6"]:checked').value;
+ var yes7=document.querySelector('input[name="yes7"]:checked').value;
+ var onefive=document.querySelector('input[name="onefive"]:checked').value;
+localStorage.setItem("What curriculum are you part of?", spj);
+localStorage.setItem("What school events did you participate/compete in?", xdivmeet);
+localStorage.setItem("Did you enjoy the experience?", yes0);
+localStorage.setItem("Does your coach train you regularly before competitions?", yes1);
+localStorage.setItem("Has these events caused your work to pile up?", yes3);
+localStorage.setItem("Is the work stressing you out?", yes4);
+localStorage.setItem("Did you receive any incentives or excemptions because of your participation", yes5);
+localStorage.setItem("How many tasks did you miss?",onefive);
+localStorage.setItem("Did the events impact your learning?",yes6);
+localStorage.setItem("Will you still consider joining in school events/competitions again?",yes7);
+ }
+    </script>
+
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">Surveiziz</p>
+  </div>
+
+  <div class="topbar">
+    <div class="container">
+
+      <address class="topbar-item">
+        <span class="span">
+          A Survey About Missing Tasks
+        </span>
+      </address>
+
+    </div>
+  </div>
+</body>
+</head>
+</html>

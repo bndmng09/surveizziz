@@ -1,0 +1,33 @@
+.btn{
+    background-color: #ffff;
+    border-radius: 15%;
+    }
+    
+    .box{position: absolute;
+        width: 520px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 370px;
+        margin-right: 370px;
+        padding: 20px;
+        background:#ffff;
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.6);
+        border-radius: 15px;
+        opacity: 40%;
+        }
+    
+    div{ display: block;
+        unicode-bidi: isolate;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        width: 130%;
+        height: 100%;
+        font-family: 'Gill Sans';
+        background-image: url('mind.jpg');
+        background-attachment: fixed;
+        opacity: 100%;
+    }
